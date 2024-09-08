@@ -1,0 +1,56 @@
+while True:
+    while True:
+        try:
+            input_first_number = int(input("Enter the first non-negative integer: "))
+            input_second_number = int(input("Enter the second non-negative integer: "))
+
+
+            if input_first_number < 0 or input_second_number < 0:
+                print("Invalid Input,Please enter non-negative numbers.")
+                continue
+
+            break
+        except ValueError:
+            print("Invalid Input,Please enter valid integers.")
+
+    print("----------Operations---------  \n ->Addition (+)\n ->Subtraction (-)\n ->Multiplication (*)\n ->Division (/)\n ->Modulus Division (%)\n ->Exponentiation (^)\n ->Floor Division (//)")
+
+    choose_operation = input("What operation would you like to use?")
+
+    if choose_operation == "+":
+        addition = input_first_number+input_second_number
+        print(f"Answer: {input_first_number}+{input_second_number}={addition}")
+    elif choose_operation == "-":
+        subtraction = input_first_number-input_second_number
+        print(f"Answer: {input_first_number}-{input_second_number}={subtraction}")
+    elif choose_operation == "*":
+        multiplication = input_first_number*input_second_number
+        print(f"Answer: {input_first_number}×{input_second_number}={multiplication}")
+    elif choose_operation == "/":
+        if input_second_number != 0:
+            division = input_first_number / input_second_number
+            print(f"Answer: {input_first_number} / {input_second_number} = {division}")
+        else:
+            print("!!!!!!!!!!! Not Defined!,Don't use 0 !!!!!!!!!!!")
+    elif choose_operation == "%":
+        # Check for division by zero
+        if input_second_number != 0:
+            modulus = input_first_number % input_second_number
+            print(f"Answer: {input_first_number} % {input_second_number} = {modulus}")
+        else:
+            print("!!!!!!!!!!! Invalid Input !!!!!!!!!!!")
+    elif choose_operation == "^":
+        exponentiation = input_first_number ** input_second_number
+        print(f"Answer: {input_first_number} ^ {input_second_number} = {exponentiation}")
+    elif choose_operation == "//":
+        if input_second_number != 0:
+            floor_division = input_first_number // input_second_number
+            print(f"Answer: {input_first_number} // {input_second_number} = {floor_division}")
+        else:
+            print("Error: Floor division by zero is not allowed.")
+    else:
+        print("!!!!!!!!!!! Invalid operation, Please Input a valid operation symbol !!!!!!!!!!!")
+
+    exitt = input("Press [x] to exit: ").lower()
+    if exitt != "x":
+        break
